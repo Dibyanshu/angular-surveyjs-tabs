@@ -1,0 +1,44 @@
+
+<div *ngFor="let item of data; let i = index;">
+  <mat-radio-button (change)="onChange($event, i, item)">
+        {{item.label}}
+  </mat-radio-button>
+  </div> 
+
+<mat-toolbar color="primary" *ngIf="isTabVisible">
+
+	<button mat-icon-button (click)="snav.toggle()"><mat-icon>menu</mat-icon></button>
+                <h1>BCP Survey</h1>
+              </mat-toolbar>
+
+                <!-- <div fxLayout="row">
+                <div fxFlex="10">
+                  logo
+                </div> -->
+                <mat-drawer-container  >
+                  <mat-drawer #snav [mode]="'side'" #snav [opened]="'false'"  >
+                    <mat-nav-list *ngIf="isTabVisible">
+                     <mat-list-item  *ngFor="let nav of tabs" (click)="selectPage(nav)">
+                       <mat-radio-button  checked = {{nav.selected}}  >
+                        {{nav.name}}
+                       </mat-radio-button>
+                       <!-- <mat-chip-list  *ngIf={{nav.isErrorPageCountVisible }} > -->
+                      <mat-chip-list  >  
+                        <mat-chip class="mat-chip"> {{nav.pageErrorCount}}</mat-chip>
+                       </mat-chip-list>
+                      </mat-list-item>
+ 
+                      <!-- <mat-radio-button> -->
+                      <!-- {{nav.name}} -->
+                      <!-- </mat-radio-button> -->
+                      <!-- </a> -->
+                    </mat-nav-list>
+                  </mat-drawer>
+                  <mat-drawer-content>
+                    <!-- <p *ngFor="let content of tabs">{{content.fillerContent}}</p> -->
+                    <div class='survey-container contentcontainer codecontainer'>
+                      <div id='surveyElement' > </div>
+                    </div>
+                  </mat-drawer-content>
+                  
+                </mat-drawer-container>

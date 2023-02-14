@@ -1,0 +1,34 @@
+
+mat-dim {
+  min-height:100%;
+  width:100%;
+  }
+
+.is-active {
+  color: red;
+}
+
+.mat-chip {
+    transition: none !important;
+    box-shadow: none !important;
+}
+
+.mat-list-item {
+background-color: #fefefe; 
+}  
+
+.mat-tab-label-active {
+    background-color: #5EADB0;
+    color: #D5FEFF;
+    border: 1px solid #6B7F7F;
+    font-weight: bold;
+}
+
+
+.mat-tab-label {
+    line-height: 30px !important;
+    height: 30px !important;
+    min-width: 100px !important;
+    border: 1px solid #7e7e7e;
+}
+
