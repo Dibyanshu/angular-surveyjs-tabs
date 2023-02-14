@@ -1,10 +1,10 @@
 
 <div *ngFor="let item of data; let i = index;">
   <mat-radio-button (change)="onChange($event, i, item)">
-        {{item.label}}
+        {{i}} - {{item.label}}
   </mat-radio-button>
   </div> 
-<button type="button">Apply Answer</button>
+<button (click)="applyAnswer()" type="button">Apply Answer</button>
 <mat-toolbar color="primary" *ngIf="isTabVisible">
 
 	<button mat-icon-button (click)="snav.toggle()"><mat-icon>menu</mat-icon></button>
@@ -18,9 +18,9 @@
                 <mat-drawer-container  >
                   <mat-drawer #snav [mode]="'side'" #snav [opened]="'false'"  >
                     <mat-nav-list *ngIf="isTabVisible">
-                     <mat-list-item  *ngFor="let nav of tabs" (click)="selectPage(nav)">
+                     <mat-list-item  *ngFor="let nav of tabs; let i = index;" (click)="selectPage(nav)">
                        <mat-radio-button  checked = {{nav.selected}}  >
-                        {{nav.name}}
+                        {{i+1}} - {{nav.name}}
                        </mat-radio-button>
                        <!-- <mat-chip-list  *ngIf={{nav.isErrorPageCountVisible }} > -->
                       <mat-chip-list  >  
